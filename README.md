@@ -23,9 +23,18 @@
 
 ### macOS
 1. `.dmg` 다운로드 후 열어서 keunson을 **Applications**로 드래그
-2. 처음 실행 시 경고가 뜨면: 앱 **우클릭 → 열기 → 열기**
+2. **"keunson이 손상되었기 때문에 열 수 없습니다"** 경고가 뜹니다.
+   이건 앱이 손상된 게 아니라, 코드 서명이 없는 앱을 인터넷에서 받으면 macOS가 자동으로 막는 것입니다.
+   아래 한 줄로 해제할 수 있습니다:
+   - **터미널**(응용프로그램 → 유틸리티 → 터미널) 실행 후 다음을 붙여넣고 엔터:
+     ```
+     xattr -cr /Applications/keunson.app
+     ```
+   - 이제 keunson을 더블클릭하면 정상 실행됩니다.
+   - ⚠️ "휴지통으로 이동"을 누르면 앱이 삭제되니, 위 명령을 먼저 실행해주세요.
+
+> 코드 서명 인증서가 적용되면 위 과정 없이 바로 실행됩니다 (준비 중).
 
 ## 💬 문의
 
-- 웹 버전: https://bigspender-detector.pages.dev
-- 문의: saguo.company@gmail.com
+- 문의: keunsontamjigi@gmail.com
